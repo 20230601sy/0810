@@ -3,12 +3,13 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 const Search = () => {
   return (
-    <div>Search
-      <InputGroup className="mb-3">
+    // <div className="align-items-center">
+    <div className="my-2">
+      <InputGroup>
+        <Form.Control aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         <InputGroup.Text id="inputGroup-sizing-default">
           <i class="fa-solid fa-magnifying-glass"></i>
         </InputGroup.Text>
-        <Form.Control aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
       </InputGroup>
     </div>
   );
