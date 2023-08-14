@@ -1,33 +1,64 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import { bgColor2nd } from '../constants/color';
 import { useNavigate } from 'react-router-dom';
 
-import '../styles/MainFooter.css'
+import '../styles/MainFooter.css';
+import { abouts } from '../constants/aboutList';
 
 const MainFooter = () => {
   const navigate = useNavigate();
 
   return (
     <div>
-      <Container className='d-none d-md-block'>
-        <Row md="auto">
-          <Col>공지사항</Col>
-          <Col>점포안내</Col>
-          <Col onClick={()=>navigate('/about')}>(주문)픽업위치</Col>
-        </Row>
-        <Row md="auto">
-          <Col>회사 소개</Col>
-          <Col>개인정보처리방침</Col>
-          <Col>이용약관</Col>
-          <Col>연락처</Col>
-        </Row>
-      </Container>
+      <Navbar data-bs-theme="dark" className='mt-2 py-0 d-none d-md-block' style={{...bgColor2nd}}>
+        <Container>
+          <Nav className="me-auto">            
+            {
+              [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${abouts[num].id}`)}>{abouts[num].title}</Nav.Link>)
+              // [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`${abouts[num].destination}`)}>{abouts[num].title}</Nav.Link>)
+            }
+          </Nav>
+        </Container>
+      </Navbar>
+      <Navbar data-bs-theme="dark" className='py-0 pb-5 d-none d-md-block' style={{...bgColor2nd}}>
+        <Container>
+          <Nav className="me-auto">            
+            {
+              [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${abouts[num].id}`)}>{abouts[num].title}</Nav.Link>)
+            }
+          </Nav>
+        </Container>
+      </Navbar>
 
-      <Navbar className='main-footer-mobile d-md-none p-0 fixed-bottom'>
+      {/* fixed-bottom 공간 margin 계산 안하려고 똑같은 거 집어넣음... */}
+      <Navbar className='main-footer-mobile d-md-none p-0 mt-2'>
+        <Nav>
+        {/* <Nav className="me-auto"> */}
+          <Nav.Link href="#home">
+            <div><i class="fa-solid fa-bars"></i></div>
+            <div>카테고리</div>
+          </Nav.Link>
+          <Nav.Link href="#features">
+            <div><i class="fa-regular fa-bell"></i></div>
+            <div>픽업 안내</div>
+          </Nav.Link>
+          <Nav.Link href="#pricing">
+            <div><i class="fa-solid fa-house"></i></div>
+            <div>홈</div>
+          </Nav.Link>
+          <Nav.Link href="#pricing">
+          <div><i class="fa-regular fa-user"></i></div>
+          <div>마이페이지</div>
+          </Nav.Link>
+          <Nav.Link href="#pricing">
+            <div><i class="fa-regular fa-star"></i></div>
+            <div>자주 구매</div>
+          </Nav.Link>
+        </Nav>
+      </Navbar>
+      <Navbar className='main-footer-mobile d-md-none p-0 mt-2 fixed-bottom'>
         <Nav>
         {/* <Nav className="me-auto"> */}
           <Nav.Link href="#home">

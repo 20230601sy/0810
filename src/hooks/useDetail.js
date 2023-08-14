@@ -1,0 +1,3 @@
+const useDetail = (id) => {
+  
+}

@@ -1,38 +1,48 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 
-const items = createSlice({
-  name : 'items',
+const totalItems = createSlice({
+  name : 'totalItems',
   initialState : [],
   reducers: {
-    incCnt(state, action){
-      state[action.payload].count++;
+    setTotalItems(state, action) {
+      console.log(state);
+      alert('settotal');
+      return action.payload;
+    }
+  }
+})
+
+const first12Items = createSlice({
+  name : 'first12Items',
+  initialState : [],
+  reducers: {
+    setFirst12Items(state, action) {
+      return action.payload;
+    }
+  }
+})
+
+const numShowItems = createSlice({
+  name : 'numShowItems',
+  initialState : 12,
+  reducers: {
+    setNumShowItems(state, action) {
+      return action.payload;
     },
-    decCnt(state, action){
-      let index = state.findIndex(item => item.id===parseInt(action.payload));
-      if(state[index].count > 0)
-        state[index].count--;
-    },
-    addItem(state, action){
-      const {id, title} = action.payload;
-      let item = state.find(item => item.id===Number(id));
-      if(item)
-        item.count++;
-      else
-        state.push({ id : id, title : title, count : 1 });
-      state.sort((a, b) => Number(a.id)-Number(b.id));
-    },
-    delItem(state, action){
-      let index = state.findIndex(item => item.id===parseInt(action.payload));
-      state.splice(index, 1);
+    incNumShowItems(state) {
+      state += 12;
     }
   }
 })
 
 export default configureStore({
   reducer : {
-    items : items.reducer,
+    totalItems : totalItems.reducer,
+    first12Items : first12Items.reducer,
+    numShowItems : numShowItems.reducer
   }
 })
 
-
-export const { incCnt, decCnt, addItem, delItem } = items.actions;
+export const { setTotalItems } = totalItems.actions;
+export const { setFirst12Items } = first12Items.actions;
+export const { setNumShowItems, incNumShowItems } = numShowItems.actions;

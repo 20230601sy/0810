@@ -29,7 +29,8 @@ const EventCarousel = () => {
           events.map(event => 
             <Carousel.Item key={event.id}>
               {/* <img src={`${imgPath}${event.img}`} alt="" class='img-fluid'/> */}
-              <img src={`https://via.placeholder.com/800x200?text=Event Image ${event.id}`} alt="" class='img-fluid'/>
+              <img src={`${imgPath}${event.img}`} alt="" style={{width: '800px', height:'300px'}} class='img-fluid'/>
+              {/* <img src={`https://via.placeholder.com/800x200?text=Event Image ${event.id}`} alt="" class='img-fluid'/> */}
             </Carousel.Item>
           )
         }
