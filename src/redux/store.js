@@ -5,18 +5,16 @@ const totalItems = createSlice({
   initialState : [],
   reducers: {
     setTotalItems(state, action) {
-      console.log(state);
-      alert('settotal');
       return action.payload;
     }
   }
 })
 
-const first12Items = createSlice({
-  name : 'first12Items',
+const detailItem = createSlice({
+  name : 'detailItem',
   initialState : [],
   reducers: {
-    setFirst12Items(state, action) {
+    setDetailItem(state, action) {
       return action.payload;
     }
   }
@@ -24,13 +22,15 @@ const first12Items = createSlice({
 
 const numShowItems = createSlice({
   name : 'numShowItems',
-  initialState : 12,
+  initialState : { num : 12 }, // 그냥 숫자로 하면 안됨... 아무튼 안됨!
   reducers: {
     setNumShowItems(state, action) {
       return action.payload;
     },
-    incNumShowItems(state) {
-      state += 12;
+    incNumShowItems(state, action) {
+      state.num += 12;
+      if(state.num > Number(action.payload) && Number(action.payload) !== 0)
+        state.num = Number(action.payload);
     }
   }
 })
@@ -38,11 +38,11 @@ const numShowItems = createSlice({
 export default configureStore({
   reducer : {
     totalItems : totalItems.reducer,
-    first12Items : first12Items.reducer,
+    detailItem : detailItem.reducer,
     numShowItems : numShowItems.reducer
   }
 })
 
 export const { setTotalItems } = totalItems.actions;
-export const { setFirst12Items } = first12Items.actions;
+export const { setDetailItem } = detailItem.actions;
 export const { setNumShowItems, incNumShowItems } = numShowItems.actions;
