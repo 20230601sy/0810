@@ -12,15 +12,12 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1399px) {
-/* @media screen and (min-width: 992px) and (max-width: 1199px) { */
-/* @media screen and (min-width: 992px) { */
   .item-list-container {
     grid-template-columns: repeat(3, 18rem);
   }
 }
 
 @media screen and (min-width: 1400px) {
-/* @media screen and (min-width: 1200px) { */
   .item-list-container {
     grid-template-columns: repeat(4, 18rem);
   }

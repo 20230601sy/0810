@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
-import { events } from '../constants/eventList';
-import { imgPath } from '../constants/path';
+import { EVENT_LISTS } from '../constants/eventList';
+import { IMG_PATH } from '../constants/path';
 
 const EventCarousel = () => {
   const [index, setIndex] = useState(0);
@@ -26,10 +26,10 @@ const EventCarousel = () => {
           //     {/* </Carousel.Caption> */}
           //   </Carousel.Item>
           // )
-          events.map(event => 
+          EVENT_LISTS.map(event => 
             <Carousel.Item key={event.id}>
-              {/* <img src={`${imgPath}${event.img}`} alt="" class='img-fluid'/> */}
-              <img src={`${imgPath}${event.img}`} alt="" style={{width: '800px', height:'300px'}} class='img-fluid'/>
+              {/* <img src={`${IMG_PATH}${event.img}`} alt="" class='img-fluid'/> */}
+              <img src={`${IMG_PATH}${event.img}`} alt="" style={{width: '800px', height:'300px'}} className='img-fluid'/>
               {/* <img src={`https://via.placeholder.com/800x200?text=Event Image ${event.id}`} alt="" class='img-fluid'/> */}
             </Carousel.Item>
           )

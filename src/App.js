@@ -1,7 +1,7 @@
 import './App.css';
 import { Suspense, lazy, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import { setFirst12Items, setTotalItems } from './redux/store';
+import { setTotalItems } from './redux/store';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -13,6 +13,7 @@ import ItemListPage from './pages/ItemListPage';
 import Detail from './pages/Detail';
 import About from './pages/About';
 import { useDispatch } from 'react-redux';
+import LoginPage from './pages/LoginPage';
 
 const URL = 'https://20230601sy.github.io/0810/src/assets/items.json';
 const URL12 = 'https://20230601sy.github.io/0810/src/assets/first12items.json';
@@ -50,6 +51,7 @@ function App() {
       <Suspense fallback={<div>로딩중</div>}>
         <Routes>
           <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<LoginPage />}/>
           <Route path='/join' element={<Join />}/>
           <Route path='/mypage' element={<MyPage />}/>
           <Route path='/cart' element={<Cart />}/>

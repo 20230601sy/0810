@@ -10,9 +10,9 @@ import CategoryDropdown from './CategoryDropdown';
 
 import { useNavigate } from 'react-router-dom';
 
-import { imgPath } from '../constants/path';
-import { bgColor } from '../constants/color';
-import { itemLists } from '../constants/itemLists';
+import { IMG_PATH } from '../constants/path';
+import { BG_COLOR } from '../constants/color';
+import { ITEM_LISTS } from '../constants/itemLists';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ const Header = () => {
         <Row className='flex-column flex-md-row align-items-center'>
           <Col className='text-start' xs="auto">
             {/* <img src={process.env.PUBLIC_URL + '/logo.png'} alt='logo'/> */}
-            {/* <img src={`${imgPath}logo.png`} alt='logo' class='img-fluid'/> */}
-            <img src={`${imgPath}logo.png`} alt='logo' class='py-1' style={{cursor:'pointer'}} onClick={()=>navigate('/')}/>
+            {/* <img src={`${IMG_PATH}logo.png`} alt='logo' class='img-fluid'/> */}
+            <img src={`${IMG_PATH}logo.png`} alt='logo' className='py-1' style={{cursor:'pointer'}} onClick={()=>navigate('/')}/>
             {/* <img src="https://via.placeholder.com/200x50?text=logo"/> */}
           </Col>
           <Col>
@@ -38,14 +38,14 @@ const Header = () => {
 
       {/* <Navbar bg="dark" data-bs-theme="dark"> */}
       {/* <Navbar data-bs-theme="dark" style={{background : "#2578c4"}}> */}
-      <Navbar data-bs-theme="dark" style={{...bgColor}}>
+      <Navbar data-bs-theme="dark" style={{...BG_COLOR}}>
         <Container>
           <Nav className="me-auto">
             <CategoryDropdown /> {/* 가상 태그라 style 적용을 못하니 css를 위해 분리 시전 */}
             
             {/* 신상품 세일중 자주 구매 베스트 */}
             {
-              itemLists.map(itemlist => <Nav.Link key={itemlist.id} onClick={()=>navigate(`/itemlist/${itemlist.id}`)}>{itemlist.title}</Nav.Link>)
+              ITEM_LISTS.map(itemlist => <Nav.Link key={itemlist.id} onClick={()=>navigate(`/itemlist/${itemlist.id}`)}>{itemlist.title}</Nav.Link>)
             }
           </Nav>
         </Container>

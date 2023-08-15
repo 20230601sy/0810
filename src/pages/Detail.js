@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useDetail from "../hooks/useDetail";
 import { Col, Container, Row } from "react-bootstrap";
-import { imgPath } from '../constants/path';
+import { IMG_PATH } from '../constants/path';
 
 const Detail = () => {
   const {id} = useParams();
@@ -10,14 +10,13 @@ const Detail = () => {
   if(!item)
     return <div>데이터를 읽어오는 중입니다...</div>;
   
-  // const {title, img, price, new1, event} = item; new 가 안돼! 허얼...
+  // const {title, img, price, new, event} = item; new 가 안돼! 허얼...
 
   return (
     <Container className="mt-2">
       <Row>
-        {/* <Col><ItemCard item={item}/></Col> */}
         <Col xs={6}>
-          <img src={`${imgPath}${item.img}`} width="100%" />
+          <img src={`${IMG_PATH}${item.img}`} style={{ width: '100%', aspectRatio: '1', padding: '1rem'}} />
         </Col>
         <Col xs={6} className="align-self-center">
             <h4>{item.title}</h4>

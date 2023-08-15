@@ -1,4 +1,4 @@
-export const abouts = [ 
+export const ABOUT_LISTS = [ 
   { id : 0, title : "공지사항", destination : ""},
   { id : 1, title : "점포안내", destination : ""}, 
   { id : 2, title : "(주문)픽업위치", destination : "/about/2"},
