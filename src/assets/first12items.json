@@ -1,14 +1,14 @@
 [
-  { "id" : 8809692954699, "title" : "조이)꽃카얼그레이뚱카롱" , "img" : "8809692954699.jpg" , "price" : 3900, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8804455400024, "title" : "벨리)앙꼬우유생크림도넛" , "img" : "8804455400024.jpg" , "price" : 2800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8809184833112, "title" : "HEYROO오엑스칩불닭맛" , "img" : "8809184833112.jpg" , "price" : 1500, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8801019611889, "title" : "해태)앙꼬피자맛감자칩" , "img" : "8801019611889.jpg" , "price" : 1800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8801019611872, "title" : "해태)앙꼬매쉬드감자칩" , "img" : "8801019611872.jpg" , "price" : 1800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8809841061094, "title" : "나무)포켓몬반지모양캔디" , "img" : "8809841061094.jpg" , "price" : 1000, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8801068917000, "title" : "삼립)미니초코마들렌8입" , "img" : "8801068917000.jpg" , "price" : 4800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8801068912487, "title" : "삼립)발효꿀데니쉬4입" , "img" : "8801068912487.jpg" , "price" : 1800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 6921101221214, "title" : "선우)구워먹는옥수수젤리" , "img" : "6921101221214.jpg" , "price" : 5500, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 4895138310673, "title" : "SC)포켓몬팝핑사과캔디" , "img" : "4895138310673.jpg" , "price" : 2000, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8803173000158, "title" : "HEYROO핫오징어스틱" , "img" : "8803173000158.jpg" , "price" : 1800, "category" : "snack", "new" : "New", "event" : "" },
-  { "id" : 8809523623664, "title" : "참조은)납작복숭아롤케익" , "img" : "8809523623664.jpg" , "price" : 3800, "category" : "snack", "new" : "New", "event" : "" }
+  { "id" : 9557062361828, "title" : "HEYROO감자칩득템어니언" , "img" : "9557062361828.jpg" , "price" : 1600, "category" : "snack", "new" : "New", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9557062361811, "title" : "HEYROO감자칩득템오리지널" , "img" : "9557062361811.jpg" , "price" : 1600, "category" : "snack", "new" : "New", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9555614201424, "title" : "위글위글)포도주스P320ml" , "img" : "9555614201424.jpg" , "price" : 1500, "category" : "beverage", "new" : "", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9555614201417, "title" : "위글위글)리치주스P320ml" , "img" : "9555614201417.jpg" , "price" : 1500, "category" : "beverage", "new" : "", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9414932382959, "title" : "카피티)바닐라빈1L" , "img" : "9414932382959.jpg" , "price" : 13900, "category" : "icecream", "new" : "", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9414932382942, "title" : "카피티)트리플초코1L" , "img" : "9414932382942.jpg" , "price" : 13900, "category" : "icecream", "new" : "", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 9002490232887, "title" : "동서)레드불캔355ml" , "img" : "9002490232887.jpg" , "price" : 3200, "category" : "beverage", "new" : "New", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 8886467124785, "title" : "프링글스)BBQ피자맛102g" , "img" : "8886467124785.jpg" , "price" : 4000, "category" : "snack", "new" : "New", "event" : "2+1", "freq" : "", "best" : "" },
+  { "id" : 8886467124778, "title" : "프링글스)치즈갈릭맛102g" , "img" : "8886467124778.jpg" , "price" : 4000, "category" : "snack", "new" : "New", "event" : "2+1", "freq" : "", "best" : "" },
+  { "id" : 8886467100031, "title" : "프링글스)치즈110g" , "img" : "8886467100031.jpg" , "price" : 4000, "category" : "snack", "new" : "New", "event" : "2+1", "freq" : "", "best" : "" },
+  { "id" : 8859623800397, "title" : "매크로)하이츄복숭아맛" , "img" : "8859623800397.jpg" , "price" : 1000, "category" : "snack", "new" : "New", "event" : "", "freq" : "", "best" : "" },
+  { "id" : 8859253100058, "title" : "몽뜨)브라우니크래커다크" , "img" : "8859253100058.jpg" , "price" : 2500, "category" : "snack", "new" : "New", "event" : "", "freq" : "", "best" : "" }  
 ]
