@@ -67,7 +67,6 @@ const LoginPage = () => {
         <Form.Group as={Row} className="mb-5" controlId="formHorizontalCheck" >
           <Col className = 'd-flex align-items-center' xs={6} md={{span: 3, offset : 4}}>
             <Form.Check label="Remember me" checked={remember} onChange={({ target: { checked } }) => setRemember(checked)}/>
-            {/* <Form.Check label="Remember me" checked={remember} onChange={setRemember}/> */}
           </Col>
           <Col xs={3} md={1}></Col>
           <Col xs={3} md={2}>

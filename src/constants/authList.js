@@ -22,8 +22,8 @@ export const AUTHORITIES = [
     loginIdPwd : { id : 'manager', pwd : '1234' },
     loginState : 'manager',
     icons : [ 
-      { className : 'fa-list-check', navTarget : '/login' }, // 수정전
-      { className : 'fa-chart-line', navTarget : '/login' }, // 수정전
+      { className : 'fa-list-check', navTarget : '/notice' },
+      { className : 'fa-chart-line', navTarget : '/chart' },
     ]
   }, 
   { 
@@ -31,8 +31,8 @@ export const AUTHORITIES = [
     loginIdPwd : { id : 'admin', pwd : '1234' },
     loginState : "admin", 
     icons : [ 
-      { className : 'fa-crown', navTarget : '/login' }, // 수정전
-      { className : 'fa-chart-line', navTarget : '/login' }, // 수정전
+      { className : 'fa-crown', navTarget : '/board' },
+      { className : 'fa-chart-line', navTarget : '/chart' },
     ]
   }
 ]

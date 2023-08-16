@@ -8,6 +8,9 @@ import Home from './pages/Home';
 import Join from './pages/Join';
 import MyPage from './pages/MyPage';
 import Cart from './pages/Cart';
+import Chart from './pages/Chart';
+import Notice from './pages/Notice';
+import Board from './pages/Board';
 import Category from './pages/Category';
 import ItemListPage from './pages/ItemListPage';
 import Detail from './pages/Detail';
@@ -57,6 +60,9 @@ function App() {
           <Route path='/join' element={<Join />}/>
           <Route path='/mypage' element={<MyPage />}/>
           <Route path='/cart' element={<Cart />}/>
+          <Route path='/chart' element={<Chart />}/>
+          <Route path='/notice' element={<Notice />}/>
+          <Route path='/board' element={<Board />}/>
           <Route path='/category/:categoryID' element={<Category />}/>
           <Route path='/itemlist/:listID' element={<ItemListPage />}/>
           <Route path='/detail/:id' element={<Detail />}/>
