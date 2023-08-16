@@ -1,11 +1,11 @@
-.main-footer-mobile i {
+.footer-mobile i {
   font-size: 30px;
 }
 
-.main-footer-mobile .me-auto div:last-child {
+.footer-mobile .me-auto div:last-child {
   font-size: 12px;
 }
-.main-footer-mobile * {
+.footer-mobile * {
   padding: 2px 0;
   flex : 1;
   background: lightgrey;

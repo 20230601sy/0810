@@ -16,7 +16,7 @@ const Detail = () => {
     <Container className="mt-2">
       <Row>
         <Col xs={6}>
-          <img src={`${IMG_PATH}${item.img}`} style={{ width: '100%', aspectRatio: '1', padding: '1rem'}} />
+          <img src={`${IMG_PATH}${item.img}`} style={{ width: '100%', aspectRatio: '1', padding: '1rem'}} alt="item-img"/>
         </Col>
         <Col xs={6} className="align-self-center">
             <h4>{item.title}</h4>

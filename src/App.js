@@ -12,6 +12,8 @@ import Category from './pages/Category';
 import ItemListPage from './pages/ItemListPage';
 import Detail from './pages/Detail';
 import About from './pages/About';
+import Footer from './components/Footer';
+
 import { useDispatch } from 'react-redux';
 import LoginPage from './pages/LoginPage';
 
@@ -61,6 +63,8 @@ function App() {
           <Route path='/about' element={<About />}/>
         </Routes>
       </Suspense>
+
+      <Footer />
     </div>
   );
 }

@@ -37,10 +37,10 @@ const detailItem = createSlice({
 
 const loginState = createSlice({
   name : 'loginState',
-  initialState : false,
+  initialState : 'logout',
   reducers: {
-    setLoginState(state) {
-      return !state;
+    setLoginState(state, action) {
+      return action.payload;
     }
   }
 })
@@ -57,3 +57,4 @@ export default configureStore({
 export const { setTotalItems } = totalItems.actions;
 export const { setDetailItem } = detailItem.actions;
 // export const { setNumShowItems, incNumShowItems } = numShowItems.actions;
+export const { setLoginState } = loginState.actions;
