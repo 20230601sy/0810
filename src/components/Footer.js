@@ -33,7 +33,6 @@ const Footer = () => {
         </Container>
       </Navbar>
 
-      <Container className='d-sm-none' style={{height:'45px'}}></Container>
       <Container className='d-md-none' style={{height:'80px'}}></Container>
       <Navbar className='footer-mobile d-md-none p-0 mt-2 fixed-bottom'>
         {/* <Nav> */}
