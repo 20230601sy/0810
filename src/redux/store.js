@@ -35,6 +35,16 @@ const detailItem = createSlice({
 //   }
 // })
 
+// const searchItems = createSlice({
+//   name : 'searchItems',
+//   initialState : [],
+//   reducers: {
+//     setSearchItems(state, action) {
+//       return action.payload;
+//     }
+//   }
+// })
+
 const loginState = createSlice({
   name : 'loginState',
   initialState : 'logout',
@@ -49,6 +59,7 @@ export default configureStore({
   reducer : {
     totalItems : totalItems.reducer,
     detailItem : detailItem.reducer,
+    // searchItems : searchItems.reducer,
     // numShowItems : numShowItems.reducer
     loginState : loginState.reducer
   }
@@ -56,5 +67,6 @@ export default configureStore({
 
 export const { setTotalItems } = totalItems.actions;
 export const { setDetailItem } = detailItem.actions;
+// export const { setSearchItems } = searchItems.actions;
 // export const { setNumShowItems, incNumShowItems } = numShowItems.actions;
 export const { setLoginState } = loginState.actions;

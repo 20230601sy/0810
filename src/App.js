@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 
 import { useDispatch } from 'react-redux';
 import LoginPage from './pages/LoginPage';
+import SearchPage from './pages/SearchPage';
 
 const URL = 'https://20230601sy.github.io/0810/src/assets/items.json';
 const URL12 = 'https://20230601sy.github.io/0810/src/assets/first12items.json';
@@ -63,6 +64,7 @@ function App() {
           <Route path='/chart' element={<Chart />}/>
           <Route path='/notice' element={<Notice />}/>
           <Route path='/board' element={<Board />}/>
+          <Route path='/search/:title' element={<SearchPage />}/>
           <Route path='/category/:categoryID' element={<Category />}/>
           <Route path='/itemlist/:listID' element={<ItemListPage />}/>
           <Route path='/detail/:id' element={<Detail />}/>

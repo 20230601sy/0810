@@ -23,7 +23,9 @@ const ItemList = ({itemArr}) => {
   // 마음에는 안 들지만 계속 실패하여ㅋㅋㅋ 
   // https://stackoverflow.com/questions/45585542/detecting-when-user-scrolls-to-bottom-of-div-with-react-js
   // 일단 가장 쉬운 방법으로 구현해둠. 나중에 다 끝나고 수정...할 리는 없군ㅎ
-
+  if(!itemArr.length) {
+    return (<Container className='d-flex justify-content-center mt-2'><div>검색 결과가 없습니다.</div></Container>);
+  }
   return (
     // <Container>
     //   <Row xs='auto' className='test justify-content-center'>

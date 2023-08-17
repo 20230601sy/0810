@@ -3,41 +3,57 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BG_COLOR_SECOND } from '../constants/color';
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { CATEGORIES } from '../constants/categoryList'; // 이 정도는 알고 있는 걸로 하자 ㅡ_ㅡ
 
 import '../styles/Footer.css';
 import { ABOUT_LISTS } from '../constants/aboutList';
+import { useState } from 'react';
 
 const Footer = () => {
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const navigate = useNavigate();
 
   return (
-    <div>
-      <Navbar data-bs-theme="dark" className='mt-2 py-0 d-none d-md-block' style={{...BG_COLOR_SECOND}}>
-        <Container>
-          <Nav className="me-auto">            
-            {
-              // [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
-              [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
-            }
-          </Nav>
-        </Container>
-      </Navbar>
-      <Navbar data-bs-theme="dark" className='py-0 pb-5 d-none d-md-block' style={{...BG_COLOR_SECOND}}>
-        <Container>
-          <Nav className="me-auto">            
-            {
-              // [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
-              [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
-            }
-          </Nav>
-        </Container>
-      </Navbar>
-
-      <Container className='d-md-none' style={{height:'80px'}}></Container>
-      <Navbar className='footer-mobile d-md-none p-0 mt-2 fixed-bottom'>
-        {/* <Nav> */}
+    <div className='Footer'>
+      <Container className='mt-2' style={{height:'80px'}}></Container>
+      <div className="pc-footer-container d-none d-md-block fixed-bottom" style={{...BG_COLOR_SECOND}}>
+        {/* <Container style={{height:'128px'}}></Container> */}
+        {/* <div className='sticky-bottom'> */}
+          <Navbar data-bs-theme="dark" className='py-0'>
+            <Container>
+              <Nav className="me-auto">            
+                {
+                  // [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
+                  [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
+                }
+              </Nav>
+            </Container>
+          </Navbar>
+          <Navbar data-bs-theme="dark" className='py-0'>
+            <Container>
+              <Nav className="me-auto">            
+                {
+                  // [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
+                  [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
+                }
+              </Nav>
+            </Container>
+          </Navbar>
+        {/* </div> */}
+      </div>
+      
+      
+      {/* <Container className='d-md-none' style={{height:'80px'}}></Container> */}
+      <Navbar className='footer-mobile d-md-none p-0 fixed-bottom'>
         <Nav className="me-auto">
-          <Nav.Link href="#home">
+          <ButtonGroup vertical className={'mobile-dropdown-container ' + (showMobileDropdown ? 'd-block' : 'd-none')}>
+            {
+              CATEGORIES.map((category) => <Button variant="secondary" size="lg" key={category.id} onClick={()=>navigate(`/category/${category.id}`)}>{category.content}</Button>)
+            }
+          </ButtonGroup>
+          <Nav.Link onMouseMove={()=>setShowMobileDropdown(true)} onMouseLeave={()=>setShowMobileDropdown(false)} className='position-relative'>
             <div><i className="fa-solid fa-bars"></i></div>
             <div>카테고리</div>
           </Nav.Link>
