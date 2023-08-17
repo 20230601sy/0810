@@ -15,7 +15,7 @@ const Login = () => {
   return (
     <div className={`login login-${target.loginState}`}>
       <i className='fa-solid fa-power-off' onClick={()=>{ 
-        if(target.loginState=='logout')
+        if(target.loginState==='logout')
           navigate('/login')
         else {
           dispatch(setLoginState('logout'));

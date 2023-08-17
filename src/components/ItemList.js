@@ -2,14 +2,14 @@ import Container from 'react-bootstrap/Container';
 import ItemCard from './ItemCard';
 import '../styles/ItemList.css';
 // import { useDispatch, useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { incNumShowItems } from '../redux/store';
 import { useState } from 'react';
 
 const ItemList = ({itemArr}) => {
   // const {totalItems, numShowItems} = useSelector(state=>state);
   // const showItems = totalItems.slice(0, numShowItems);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const [numShowItems, setNumShowItems] = useState(itemArr.length > 12 ? 12 : itemArr.length);
   const [numShowItems, setNumShowItems] = useState(12);
 

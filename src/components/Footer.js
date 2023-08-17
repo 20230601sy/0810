@@ -36,8 +36,8 @@ const Footer = () => {
       <Container className='d-sm-none' style={{height:'45px'}}></Container>
       <Container className='d-md-none' style={{height:'80px'}}></Container>
       <Navbar className='footer-mobile d-md-none p-0 mt-2 fixed-bottom'>
-        <Nav>
-        {/* <Nav className="me-auto"> */}
+        {/* <Nav> */}
+        <Nav className="me-auto">
           <Nav.Link href="#home">
             <div><i className="fa-solid fa-bars"></i></div>
             <div>카테고리</div>
