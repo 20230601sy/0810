@@ -10,6 +10,16 @@ const totalItems = createSlice({
   }
 })
 
+const showItems = createSlice({
+  name : 'showItems',
+  initialState : [],
+  reducers: {
+    setShowItems(state, action) {
+      return action.payload;
+    }
+  }
+})
+
 const detailItem = createSlice({
   name : 'detailItem',
   initialState : [],
@@ -19,31 +29,6 @@ const detailItem = createSlice({
     }
   }
 })
-
-// const numShowItems = createSlice({
-//   name : 'numShowItems',
-//   initialState : { num : 12 }, // 그냥 숫자로 하면 안됨... 아무튼 안됨!
-//   reducers: {
-//     setNumShowItems(state, action) {
-//       return action.payload;
-//     },
-//     incNumShowItems(state, action) {
-//       state.num += 12;
-//       if(state.num > Number(action.payload) && Number(action.payload) !== 0)
-//         state.num = Number(action.payload);
-//     }
-//   }
-// })
-
-// const searchItems = createSlice({
-//   name : 'searchItems',
-//   initialState : [],
-//   reducers: {
-//     setSearchItems(state, action) {
-//       return action.payload;
-//     }
-//   }
-// })
 
 const loginState = createSlice({
   name : 'loginState',
@@ -58,15 +43,13 @@ const loginState = createSlice({
 export default configureStore({
   reducer : {
     totalItems : totalItems.reducer,
+    showItems : showItems.reducer,
     detailItem : detailItem.reducer,
-    // searchItems : searchItems.reducer,
-    // numShowItems : numShowItems.reducer
     loginState : loginState.reducer
   }
 })
 
 export const { setTotalItems } = totalItems.actions;
+export const { setShowItems } = showItems.actions;
 export const { setDetailItem } = detailItem.actions;
-// export const { setSearchItems } = searchItems.actions;
-// export const { setNumShowItems, incNumShowItems } = numShowItems.actions;
 export const { setLoginState } = loginState.actions;

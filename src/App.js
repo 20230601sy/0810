@@ -1,7 +1,7 @@
 import './App.css';
 import { Suspense, lazy, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import { setTotalItems } from './redux/store';
+import { setTotalItems, setShowItems } from './redux/store';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -11,15 +11,13 @@ import Cart from './pages/Cart';
 import Chart from './pages/Chart';
 import Notice from './pages/Notice';
 import Board from './pages/Board';
-import Category from './pages/Category';
-import ItemListPage from './pages/ItemListPage';
+import Items from './pages/Items';
 import Detail from './pages/Detail';
 import About from './pages/About';
 import Footer from './components/Footer';
+import LoginPage from './pages/LoginPage';
 
 import { useDispatch } from 'react-redux';
-import LoginPage from './pages/LoginPage';
-import SearchPage from './pages/SearchPage';
 
 const URL = 'https://20230601sy.github.io/0810/src/assets/items.json';
 const URL12 = 'https://20230601sy.github.io/0810/src/assets/first12items.json';
@@ -31,6 +29,7 @@ function App() {
     axios.get(URL)
       .then((result)=>{
         dispatch(setTotalItems(result.data));
+        dispatch(setShowItems(result.data));
       })
       .catch((error)=>{
         console.log(error);
@@ -40,10 +39,7 @@ function App() {
   useMemo(()=>{
     axios.get(URL12)
       .then((result)=>{
-        // console.log(result.data.slice(0,2));
-        // alert('hi');
-        // dispatch(setFirst12Items(result.data));
-        dispatch(setTotalItems(result.data));
+        dispatch(setShowItems(result.data));
       })
       .catch((error)=>{
         console.log(error);
@@ -64,9 +60,10 @@ function App() {
           <Route path='/chart' element={<Chart />}/>
           <Route path='/notice' element={<Notice />}/>
           <Route path='/board' element={<Board />}/>
-          <Route path='/search/:title' element={<SearchPage />}/>
-          <Route path='/category/:categoryID' element={<Category />}/>
-          <Route path='/itemlist/:listID' element={<ItemListPage />}/>
+          {/* <Route path='/search/:title' element={<SearchPage />}/> */}
+          {/* <Route path='/category/:categoryID' element={<Category />}/> */}
+          {/* <Route path='/itemlist/:listID' element={<ItemListPage />}/> */}
+          <Route path='/items' element={<Items />}/>
           <Route path='/detail/:id' element={<Detail />}/>
           <Route path='/about' element={<About />}/>
         </Routes>
