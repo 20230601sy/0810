@@ -1,10 +1,13 @@
 import './App.css';
-import { Suspense, lazy, useEffect, useMemo } from 'react';
+import { Suspense, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import { setTotalItems, setShowItems } from './redux/store';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import Header from './components/Header';
 import Home from './pages/Home';
+import LoginPage from './pages/LoginPage';
 import Join from './pages/Join';
 import MyPage from './pages/MyPage';
 import Cart from './pages/Cart';
@@ -15,9 +18,7 @@ import Items from './pages/Items';
 import Detail from './pages/Detail';
 import About from './pages/About';
 import Footer from './components/Footer';
-import LoginPage from './pages/LoginPage';
 
-import { useDispatch } from 'react-redux';
 
 const URL = 'https://20230601sy.github.io/0810/src/assets/items.json';
 const URL12 = 'https://20230601sy.github.io/0810/src/assets/first12items.json';
@@ -60,12 +61,10 @@ function App() {
           <Route path='/chart' element={<Chart />}/>
           <Route path='/notice' element={<Notice />}/>
           <Route path='/board' element={<Board />}/>
-          {/* <Route path='/search/:title' element={<SearchPage />}/> */}
-          {/* <Route path='/category/:categoryID' element={<Category />}/> */}
-          {/* <Route path='/itemlist/:listID' element={<ItemListPage />}/> */}
           <Route path='/items' element={<Items />}/>
           <Route path='/detail/:id' element={<Detail />}/>
           <Route path='/about' element={<About />}/>
+          <Route path='*' element={<Home />}/>
         </Routes>
       </Suspense>
 

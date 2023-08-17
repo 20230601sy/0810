@@ -1,22 +1,24 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { BG_COLOR_SECOND } from '../constants/color';
-import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { CATEGORIES } from '../constants/categoryList'; // 이 정도는 알고 있는 걸로 하자 ㅡ_ㅡ
-
-import '../styles/Footer.css';
-import { ABOUT_LISTS } from '../constants/aboutList';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import Category from './Category';
+import { BG_COLOR_SECOND } from '../constants/color';
+import { ABOUT_LISTS } from '../constants/aboutList';
+import '../styles/Footer.css';
 
 const Footer = () => {
-  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(true);
   const navigate = useNavigate();
 
   return (
     <div className='Footer'>
+      <div style={{width:'150px', height:'0'}}>
+        {
+          showMobileDropdown &&
+          <Category color={{background: 'lightgrey'}} style={{position: 'fixed', left: '5px', bottom:'-90px'}}/>
+        }
+      </div>
       <Container className='mt-2' style={{height:'80px'}}></Container>
       <div className="pc-footer-container d-none d-md-block fixed-bottom" style={{...BG_COLOR_SECOND}}>
         {/* <Container style={{height:'128px'}}></Container> */}
@@ -44,15 +46,8 @@ const Footer = () => {
         {/* </div> */}
       </div>
       
-      
-      {/* <Container className='d-md-none' style={{height:'80px'}}></Container> */}
       <Navbar className='footer-mobile d-md-none p-0 fixed-bottom'>
         <Nav className="me-auto">
-          <ButtonGroup vertical className={'mobile-dropdown-container ' + (showMobileDropdown ? 'd-block' : 'd-none')}>
-            {
-              CATEGORIES.map((category) => <Button variant="secondary" size="lg" key={category.id} onClick={()=>navigate(`/category/${category.id}`)}>{category.content}</Button>)
-            }
-          </ButtonGroup>
           <Nav.Link onMouseMove={()=>setShowMobileDropdown(true)} onMouseLeave={()=>setShowMobileDropdown(false)} className='position-relative'>
             <div><i className="fa-solid fa-bars"></i></div>
             <div>카테고리</div>
