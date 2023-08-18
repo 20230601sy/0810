@@ -1,7 +1,7 @@
 import './App.css';
 import { Suspense, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import { setTotalItems, setShowItems } from './redux/store';
+import { setTotalItems, setShowItems, setCartItems } from './redux/store';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -43,7 +43,8 @@ function App() {
       })
       .catch((error)=>{
         console.log(error);
-      })
+      });
+    dispatch(setCartItems());
   }, [dispatch]);
   
   return (

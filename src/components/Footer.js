@@ -54,7 +54,7 @@ const Footer = () => {
             <div><i className="fa-solid fa-house"></i></div>
             <div>홈</div>
           </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/mypage')}>
+          <Nav.Link onClick={()=>navigate('/cart')}>
           <div><i className="fa-regular fa-user"></i></div>
           <div>마이페이지</div>
           </Nav.Link>

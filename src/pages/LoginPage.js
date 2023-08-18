@@ -22,7 +22,7 @@ const LoginPage = () => {
     if (target && input.id) {
       dispatch(setLoginState(target.loginState));
       if(remember)
-        localStorage.setItem('storeInfo', JSON.stringify(input));
+        localStorage.setItem('waraStoreLoginInfo', JSON.stringify(input));
       navigate('/');
     } else {
       setInput({id:'', pwd:''});
@@ -31,7 +31,7 @@ const LoginPage = () => {
   };
   
   useEffect(()=>{
-    let storeInfo = localStorage.getItem('storeInfo');
+    let storeInfo = localStorage.getItem('waraStoreLoginInfo');
     if(storeInfo) {
       storeInfo = JSON.parse(storeInfo);
       setInput(storeInfo);

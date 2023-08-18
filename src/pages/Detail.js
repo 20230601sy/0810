@@ -2,10 +2,13 @@ import { useParams } from "react-router-dom";
 import useDetail from "../hooks/useDetail";
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { IMG_PATH } from '../constants/path';
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../redux/store";
 
 const Detail = () => {
   const {id} = useParams();
   const item = useDetail(id);
+  const dispatch = useDispatch();
   
   if(!item)
     return <div>데이터를 읽어오는 중입니다...</div>;
@@ -26,6 +29,7 @@ const Detail = () => {
           <h4>{item.title}</h4>
           <h4>{Number(item.price).toLocaleString()}원</h4>
           <Button onClick={()=>{
+            dispatch(addItemToCart({id : item.id, title : item.title, price : item.price}))
             // dispatch(addItem({id : fruits[id].id, title : fruits[id].title}));
             window.alert('장바구니 추가');
           }}>카트담기</Button>
