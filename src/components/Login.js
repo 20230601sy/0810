@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import '../styles/Login.css'
 import { useNavigate } from 'react-router-dom';
 import { AUTHORITIES } from '../constants/authList';
 import { setLoginState } from '../redux/store';
+import '../styles/Login.css'
+
 const Login = () => {
   const { loginState } = useSelector(state=>state);
   let target = AUTHORITIES.find(auth => auth.loginState === loginState);
@@ -24,7 +25,7 @@ const Login = () => {
         }}>
       </i>
       {
-        target.icons.map(icon => <i className={`fa-solid ${icon.className}`} onClick={()=>navigate(`${icon.navTarget}`)}></i>)
+        target.icons.map((icon, i) => <i key={i} className={`fa-solid ${icon.className}`} onClick={()=>navigate(`${icon.navTarget}`)}></i>)
       }
     </div>
   );

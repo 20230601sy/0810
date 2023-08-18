@@ -35,13 +35,12 @@ const About = () => {
       maps[idx].addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
       infowindow.open(maps[idx], marker); // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
     })
-    // const map = new kakao.maps.Map(container, options);
   }, [])
 
   return (
-    <Container>
-      <div className='kakao-map mt-2 d-block d-md-none' style={{width:'100%', height:'65vh'}}></div>
-      <div className='kakao-map mt-2 d-none d-md-block' style={{width:'100%', height:'80vh'}}></div>
+    <Container className='About mt-2'>
+      <div className='kakao-map d-block d-md-none' style={{width:'100%', height:'65vh'}}></div>
+      <div className='kakao-map d-none d-md-block' style={{width:'100%', height:'80vh'}}></div>
     </Container>
   );
 }

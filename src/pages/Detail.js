@@ -13,7 +13,7 @@ const Detail = () => {
   // const {title, img, price, new, event} = item; new 가 안돼! 허얼...
 
   return (
-    <Container className="mt-2">
+    <Container className="Detail mt-2">
       <Row>
         <Col xs={12} md={6}>
           <div className="position-relative">

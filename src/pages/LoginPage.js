@@ -1,11 +1,11 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-// import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginState } from '../redux/store';
-import { useEffect, useState } from 'react';
-import { AUTHORITIES } from '../constants/authList';
 import { BG_COLOR } from '../constants/color';
+import { AUTHORITIES } from '../constants/authList';
+
 const LoginPage = () => {
   const [input, setInput] = useState({id:'', pwd:''});
   const [remember, setRemember] = useState(false);
@@ -40,7 +40,7 @@ const LoginPage = () => {
   }, [])
 
   return (
-    <Container className='mt-5' style={{height:'60vh'}}>
+    <Container className='LoginPage mt-5' style={{height:'60vh'}}>
       <Form action="" method="post">
         <Form.Group as={Row} className="mb-4" controlId="formHorizontalID">
           <Col md={2} className='d-none d-md-block'></Col>

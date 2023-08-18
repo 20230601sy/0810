@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const Notice = () => {
   return (
-    <div>Notice</div>
+    <Container className='Notice mt-2'>
+      Notice
+    </Container>
   );
 }
 

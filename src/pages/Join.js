@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const Join = () => {
   return (
-    <div>Join</div>
+    <Container className='Join mt-2'>
+      Join
+    </Container>
   );
 }
 

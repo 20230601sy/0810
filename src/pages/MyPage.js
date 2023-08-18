@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const MyPage = () => {
   return (
-    <div>MyPage</div>
+    <Container className='MyPage mt-2'>
+      MyPage
+    </Container>
   );
 }
 

@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap";
+
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <Container className='Cart mt-2'>
+      Cart
+    </Container>
   );
 }
 

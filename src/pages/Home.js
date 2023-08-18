@@ -1,7 +1,7 @@
-import EventCarousel from '../components/EventCarousel';
-import Items from './Items';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowItems } from '../redux/store';
+import EventCarousel from '../components/EventCarousel';
+import Items from './Items';
 
 const Home = () => {
   const {totalItems} = useSelector(state=>state);
@@ -9,7 +9,7 @@ const Home = () => {
   dispatch(setShowItems(totalItems));
 
   return (
-    <div>
+    <div className='Home'>
       <EventCarousel />
       <Items />
     </div>
