@@ -25,6 +25,15 @@ const URL12 = 'https://20230601sy.github.io/0810/src/assets/first12items.json';
 
 function App() {
   const dispatch = useDispatch();
+  useMemo(()=>{
+    axios.get(URL12)
+      .then((result)=>{
+        dispatch(setShowItems(result.data));
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+  }, [dispatch]);
 
   useEffect(()=>{
     axios.get(URL)
@@ -35,17 +44,7 @@ function App() {
       .catch((error)=>{
         console.log(error);
       })
-  }, []);
-
-  useMemo(()=>{
-    axios.get(URL12)
-      .then((result)=>{
-        dispatch(setShowItems(result.data));
-      })
-      .catch((error)=>{
-        console.log(error);
-      })
-  }, []);
+  }, [dispatch]);
   
   return (
     <div className="App">

@@ -8,9 +8,9 @@ const LONGITUDE = 126.8381811;
 const POSITION_URL = 'https://map.kakao.com/link/to/1576534967';
 
 const About = () => {
-  const maps =['', ''];
-
+  
   useEffect(() => {
+    const maps =['', ''];
     const options = { //지도를 생성할 때 필요한 기본 옵션
       center: new kakao.maps.LatLng(LATITUDE, LONGITUDE), //지도의 중심좌표.
       level: 2 //지도의 레벨(확대, 축소 정도)
@@ -29,17 +29,14 @@ const About = () => {
     
     const containers = document.getElementsByClassName('kakao-map'); //지도를 담을 영역의 DOM 레퍼런스
 
-    {
-      [0, 1].map(idx => {
-        maps[idx] = new kakao.maps.Map(containers[idx], options);
-        marker.setMap(maps[idx]); // 마커가 지도 위에 표시되도록 설정합니다
-        maps[idx].addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-        infowindow.open(maps[idx], marker); // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-      })
-    }
+    [0, 1].map(idx => {
+      maps[idx] = new kakao.maps.Map(containers[idx], options);
+      marker.setMap(maps[idx]); // 마커가 지도 위에 표시되도록 설정합니다
+      maps[idx].addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+      infowindow.open(maps[idx], marker); // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+    })
     // const map = new kakao.maps.Map(container, options);
   }, [])
-
 
   return (
     <Container>

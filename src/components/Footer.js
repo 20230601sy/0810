@@ -8,26 +8,16 @@ import { ABOUT_LISTS } from '../constants/aboutList';
 import '../styles/Footer.css';
 
 const Footer = () => {
-  const [showMobileDropdown, setShowMobileDropdown] = useState(true);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const navigate = useNavigate();
 
   return (
     <div className='Footer'>
-      <div style={{width:'150px', height:'0'}}>
-        {
-          showMobileDropdown &&
-          <Category color={{background: 'lightgrey'}} style={{position: 'fixed', left: '5px', bottom:'-90px'}}/>
-        }
-      </div>
-      <Container className='mt-2' style={{height:'80px'}}></Container>
       <div className="pc-footer-container d-none d-md-block fixed-bottom" style={{...BG_COLOR_SECOND}}>
-        {/* <Container style={{height:'128px'}}></Container> */}
-        {/* <div className='sticky-bottom'> */}
           <Navbar data-bs-theme="dark" className='py-0'>
             <Container>
               <Nav className="me-auto">            
                 {
-                  // [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
                   [0, 1, 2].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
                 }
               </Nav>
@@ -37,18 +27,22 @@ const Footer = () => {
             <Container>
               <Nav className="me-auto">            
                 {
-                  // [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`/about/${ABOUT_LISTS[num].id}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
                   [3, 4, 5, 6].map(num => <Nav.Link key={num} onClick={()=>navigate(`${ABOUT_LISTS[num].destination}`)}>{ABOUT_LISTS[num].title}</Nav.Link>)
                 }
               </Nav>
             </Container>
           </Navbar>
-        {/* </div> */}
       </div>
       
       <Navbar className='footer-mobile d-md-none p-0 fixed-bottom'>
         <Nav className="me-auto">
-          <Nav.Link onMouseMove={()=>setShowMobileDropdown(true)} onMouseLeave={()=>setShowMobileDropdown(false)} className='position-relative'>
+          <Nav.Link onMouseMove={()=>setShowMobileDropdown(true)} onMouseLeave={()=>setShowMobileDropdown(false)} onClick={()=>setShowMobileDropdown(!showMobileDropdown)} className='position-relative'>
+            <div style={{width:'100px', left: '5px', bottom:'65px', background:'none'}} className='position-absolute' >
+              {
+                showMobileDropdown &&
+                <Category color={{background: 'lightgrey'}} />
+              }
+            </div>
             <div><i className="fa-solid fa-bars"></i></div>
             <div>카테고리</div>
           </Nav.Link>
@@ -64,7 +58,7 @@ const Footer = () => {
           <div><i className="fa-regular fa-user"></i></div>
           <div>마이페이지</div>
           </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/cart')}> {/* 수정전 */}
+          <Nav.Link onClick={()=>navigate('/cart')}>
             <div><i className="fa-regular fa-star"></i></div>
             <div>자주 구매</div>
           </Nav.Link>

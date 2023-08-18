@@ -1,4 +1,4 @@
-import { Container, Row, Col, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,7 +17,7 @@ const Header = () => {
   const {totalItems} = useSelector(state => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showCategory, setShowCategory] = useState(true);
+  const [showCategory, setShowCategory] = useState(false);
 
   return (
     <div className='Header sticky-top' style={{background : 'white'}}>
@@ -38,10 +38,15 @@ const Header = () => {
       <Navbar data-bs-theme="dark" style={{...BG_COLOR}}>
         <Container>
           <Nav className="me-auto">
-            <Nav.Link className='d-none d-md-block position-relative' onMouseMove={()=>setShowCategory(true)} onMouseLeave={()=>setShowCategory(false)}>
+            <Nav.Link className='d-none d-md-block position-relative' onMouseMove={()=>setShowCategory(true)} onMouseLeave={()=>setShowCategory(false)} onClick={()=>setShowCategory(!showCategory)}>
               <i className="fa-solid fa-bars"></i>&nbsp;&nbsp;카테고리&nbsp;<i className="fa-solid fa-caret-down"></i>
+              <div style={{width:'150px', height:0}}>
+                {
+                  showCategory &&
+                  <Category color={BG_COLOR} />
+                }
+              </div>
             </Nav.Link>
-            {/* </NavDropdown> */}
             {/* 신상품 세일중 자주 구매 베스트 */}
             {
               ITEM_LISTS.map(itemlist => {
@@ -58,14 +63,6 @@ const Header = () => {
           </Nav>
         </Container>
       </Navbar>
-      <Container>
-        <div style={{width:'150px', height:0}}>
-          {
-            showCategory &&
-            <Category color={BG_COLOR} />
-          }
-        </div>
-      </Container>
     </div>
   );
 }

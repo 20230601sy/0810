@@ -11,11 +11,11 @@ const Category = ({color}) => {
   const navigate = useNavigate();
 
   return (
-    <ButtonGroup vertical className={'Category d-flex justify-content-center'}>
+    <ButtonGroup vertical className={'Category d-flex justify-content-center'} style={{background:'none'}}>
       {
         CATEGORIES.map(category => {
           return (
-            <Button className='Category-Button' style={{...color}} size="lg" key={category.id} onClick={() => {
+            <Button className='Category-Button' style={{...color, color:'rgba(255, 255, 255, 0.55)', fontSize:'16px', height:'42px', border:'none'}} size="lg" key={category.id} onClick={() => {
               dispatch(setShowItems(totalItems.filter(item => item.category === category.category)));
               navigate('/items');
             }}>

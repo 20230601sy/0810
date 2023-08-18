@@ -20,13 +20,16 @@ const Items = () => {
     return (<Container className='d-flex justify-content-center mt-2'><div>검색 결과가 없습니다.</div></Container>);
     
   return (
-    <Container className='d-flex justify-content-center mt-2'  onScroll={handleScroll}  style={{overflowY: 'scroll', maxHeight: '80vh'}}>
-      <div className="item-list-container">
-        {
-          showItems.slice(0, numShowItems).map((item)=>item && <div key={item.id}><ItemCard item={item}/></div>)
-        }
-      </div>
-    </Container>
+    <div className="Items">
+      <Container className='d-flex justify-content-center mt-2'  onScroll={handleScroll}  style={{overflowY: 'scroll', maxHeight: '80vh'}}>
+        <div className="item-list-container">
+          {
+            showItems.slice(0, numShowItems).map((item)=>item && <div key={item.id}><ItemCard item={item}/></div>)
+          }
+        </div>
+      </Container>
+      <Container className='mt-2' style={{height:'80px'}}></Container>
+    </div>
   );
 }
 
