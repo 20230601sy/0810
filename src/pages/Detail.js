@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useDetail from "../hooks/useDetail";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { IMG_PATH } from '../constants/path';
 
 const Detail = () => {
@@ -15,19 +15,22 @@ const Detail = () => {
   return (
     <Container className="mt-2">
       <Row>
-        <Col xs={6}>
-          <img src={`${IMG_PATH}${item.img}`} style={{ width: '100%', aspectRatio: '1', padding: '1rem'}} alt="item-img"/>
+        <Col xs={12} md={6}>
+          <div className="position-relative">
+            <img src={`${IMG_PATH}${item.img}`} style={{ width: '100%', aspectRatio: '1'}} alt="item-img"/>
+            <h5><Badge className="position-absolute" style={{top:'5%', right:'20%', transform: 'rotate(-20deg)'}}>{item.new}</Badge></h5>
+            <h5><Badge className="position-absolute" bg='info' style={{top:'10%', right:'10%', transform: 'rotate(-20deg)'}}>{item.event}</Badge></h5>
+          </div>
         </Col>
-        <Col xs={6} className="align-self-center">
-            <h4>{item.title}</h4>
-            <p>{item.new}&nbsp;&nbsp;{item.event}</p>
-            <p>{Number(item.price).toLocaleString()}원</p>
-            {/* <button className="btn btn-danger" onClick={()=>{
-              dispatch(addItem({id : fruits[id].id, title : fruits[id].title}));
-              window.alert('장바구니 추가');
-            }}>주문하기</button>  */}
-          {/* </div> */}
+        <Col xs={12} md={4} className="align-self-center">
+          <h4>{item.title}</h4>
+          <h4>{Number(item.price).toLocaleString()}원</h4>
+          <Button onClick={()=>{
+            // dispatch(addItem({id : fruits[id].id, title : fruits[id].title}));
+            window.alert('장바구니 추가');
+          }}>카트담기</Button>
         </Col>
+        <Col xs={12} md={2} style={{height:'80px'}}/>
       </Row>
     </Container>
   );

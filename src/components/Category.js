@@ -1,9 +1,8 @@
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import { ButtonGroup, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { CATEGORIES } from '../constants/categoryList'; // 이 정도는 알고 있는 걸로 하자 ㅡ_ㅡ
-import { useDispatch, useSelector } from 'react-redux';
 import { setShowItems } from '../redux/store';
-import { Button, ButtonGroup } from 'react-bootstrap';
 
 const Category = ({color}) => {
   const {totalItems} = useSelector(state => state);
