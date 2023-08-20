@@ -13,7 +13,8 @@ const Footer = () => {
 
   return (
     <div className='Footer'>
-      <div className="pc-footer-container d-none d-md-block fixed-bottom" style={{...BG_COLOR_SECOND}}>
+
+      <div className="pc-footer-container d-none d-md-block" style={{...BG_COLOR_SECOND}}>
           <Navbar data-bs-theme="dark" className='py-0'>
             <Container>
               <Nav className="me-auto">            
@@ -34,34 +35,38 @@ const Footer = () => {
           </Navbar>
       </div>
       
-      <Navbar className='footer-mobile d-md-none p-0 fixed-bottom'>
+      <Navbar className='mobile-footer d-md-none p-0 fixed-bottom'>
         <Nav className="me-auto">
-          <Nav.Link onMouseMove={()=>setShowMobileDropdown(true)} onMouseLeave={()=>setShowMobileDropdown(false)} onClick={()=>setShowMobileDropdown(!showMobileDropdown)} className='position-relative'>
-            <div style={{width:'100px', left: '5px', bottom:'65px', background:'none'}} className='position-absolute' >
+          <Nav.Link className='position-relative'
+                    onClick={()=>setShowMobileDropdown(!showMobileDropdown)}
+                    onMouseMove={()=>setShowMobileDropdown(true)}
+                    onMouseLeave={()=>setShowMobileDropdown(false)}>
+
+            <div className='position-absolute' style={{width:'100px', left: '5px', bottom:'65px', background:'none'}} >
               {
                 showMobileDropdown &&
                 <Category color={{background: 'lightgrey'}} />
               }
             </div>
+
             <div><i className="fa-solid fa-bars"></i></div>
             <div>카테고리</div>
           </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/about')}>
-            <div><i className="fa-regular fa-bell"></i></div>
-            <div>픽업 안내</div>
-          </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/')}>
-            <div><i className="fa-solid fa-house"></i></div>
-            <div>홈</div>
-          </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/cart')}>
-          <div><i className="fa-regular fa-user"></i></div>
-          <div>마이페이지</div>
-          </Nav.Link>
-          <Nav.Link onClick={()=>navigate('/cart')}>
-            <div><i className="fa-regular fa-star"></i></div>
-            <div>자주 구매</div>
-          </Nav.Link>
+
+          {
+            [
+              {id:0, title:'픽업 안내',  targetNav:'/about', icon:'fa-solid fa-bell'},
+              {id:1, title:'홈',         targetNav:'/',      icon:'fa-solid fa-house'},
+              {id:2, title:'마이페이지', targetNav:'/mypage', icon:'fa-solid fa-user'},
+              {id:3, title:'장바구니',   targetNav:'/cart',   icon:'fa-solid fa-cart-shopping'}
+            ].map(menu => {
+              return(
+                <Nav.Link key={menu.id} onClick={()=>navigate(menu.targetNav)}>
+                  <div><i className={menu.icon}></i></div>
+                  <div>{menu.title}</div>
+                </Nav.Link>
+              );})
+          }
         </Nav>
       </Navbar>
     </div>

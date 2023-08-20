@@ -3,17 +3,19 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "rec
 import { useEffect, useRef, useState } from "react";
 import { salesList } from '../constants/salesList';
 
-const Chart = () => {
+const Chart = ({width}) => {
   const [salesData, setSalesData] = useState(salesList);
-  const [width, setWidth] = useState(1000);
+  // const [width, setWidth] = useState(1000);
   const ref = useRef(null);
   const height = 500;
   const colItems = ['month', 'snack', 'icecream', 'beverage'];
 
-  useEffect(() => {
-    setWidth(ref.current.clientWidth*0.9);
-  }, [])
-
+  // useEffect(() => {
+  //   setWidth(ref.current.clientWidth*0.9);
+  // }, [ref])
+  // const {width} = useSelector(state=>state.windowSize);
+  let cWidth = width/2.5;
+  // alert(width);
   return (
     <Container className='Chart mt-2'>
       <Row>
@@ -23,7 +25,8 @@ const Chart = () => {
       </Row>
       <Row>
         <Col xs={12} md={6} ref={ref}>
-          <BarChart className='mt-5' width={width} height={height} data={salesData}>
+          <BarChart className='mt-5' width={cWidth} height={height} data={salesData}>
+          {/* <BarChart className='mt-5' width={window.innerWidth*0.4} height={window.innerHeight*0.6} data={salesData}> */}
             <XAxis dataKey="name" />
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />

@@ -1,8 +1,8 @@
 import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { setShowItems } from '../redux/store';
 
 import Search from './Search';
@@ -20,7 +20,8 @@ const Header = () => {
   const [showCategory, setShowCategory] = useState(false);
 
   return (
-    <div className='Header sticky-top' style={{background : 'white'}}>
+    <div className='Header fixed-top' style={{background : 'white'}}>
+      
       <Container>
         <Row className='flex-column flex-md-row align-items-center'>
           <Col className='text-start' xs="auto">
@@ -38,6 +39,7 @@ const Header = () => {
       <Navbar data-bs-theme="dark" style={{...BG_COLOR}}>
         <Container>
           <Nav className="me-auto">
+
             <Nav.Link className='d-none d-md-block position-relative' onMouseMove={()=>setShowCategory(true)} onMouseLeave={()=>setShowCategory(false)} onClick={()=>setShowCategory(!showCategory)}>
               <i className="fa-solid fa-bars"></i>&nbsp;&nbsp;카테고리&nbsp;<i className="fa-solid fa-caret-down"></i>
               <div style={{width:'150px', height:0}}>
@@ -47,11 +49,12 @@ const Header = () => {
                 }
               </div>
             </Nav.Link>
+
             {/* 신상품 세일중 자주 구매 베스트 */}
             {
               ITEM_LISTS.map(itemlist => {
                 return (
-                  <Nav.Link key={itemlist.id} onClick={()=>{
+                  <Nav.Link key={itemlist.id} className='text-nowrap' onClick={()=>{
                     dispatch(setShowItems(totalItems.filter(item => item[itemlist.compareTarget])));
                     navigate('/items');
                   }}>
@@ -60,6 +63,7 @@ const Header = () => {
                 );
               })
             }
+
           </Nav>
         </Container>
       </Navbar>

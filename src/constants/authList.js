@@ -5,7 +5,7 @@ export const AUTHORITIES = [
     loginState : "logout", 
     icons : [ 
               { className : 'fa-user', navTarget : '/login' },
-              { className : 'fa-cart-shopping', navTarget : '/login' },
+              { className : 'fa-cart-shopping', navTarget : '/login' }
             ]
   },
   { 
@@ -14,7 +14,7 @@ export const AUTHORITIES = [
     loginState : 'user', 
     icons : [ 
       { className : 'fa-user', navTarget : '/mypage' },
-      { className : 'fa-cart-shopping', navTarget : '/cart' },
+      { className : 'fa-cart-shopping', navTarget : '/cart' }
     ]
   }, 
   { 
@@ -22,8 +22,8 @@ export const AUTHORITIES = [
     loginIdPwd : { id : 'manager', pwd : '1234' },
     loginState : 'manager',
     icons : [ 
-      { className : 'fa-list-check', navTarget : '/notice' },
-      { className : 'fa-chart-line', navTarget : '/chart' },
+      { className : 'fa-list-check', navTarget : '/mypage' }, // /notice
+      { className : 'fa-chart-line', navTarget : '/cart' } // /chart
     ]
   }, 
   { 
@@ -31,8 +31,8 @@ export const AUTHORITIES = [
     loginIdPwd : { id : 'admin', pwd : '1234' },
     loginState : "admin", 
     icons : [ 
-      { className : 'fa-crown', navTarget : '/board' },
-      { className : 'fa-chart-line', navTarget : '/chart' },
+      { className : 'fa-crown', navTarget : '/mypage' }, // /board
+      { className : 'fa-chart-line', navTarget : '/cart' } // /chart
     ]
   }
 ]

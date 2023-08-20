@@ -2,9 +2,14 @@ import { Container, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { incCnt, decCnt, deleteItemFromCart } from "../redux/store";
 import { BG_COLOR, BG_COLOR_SECOND } from "../constants/color";
-const Cart = () => {
+import Chart from "./Chart";
+
+const Cart = ({width}) => {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector(state => state);
+  const {loginState, cartItems} = useSelector(state => state);
+
+  if(loginState==='admin' || loginState==='manager')
+    return <Chart width={width}/>
 
   if(cartItems.length === 0)
     return <Container className='Cart mt-2'>표시할 상품이 없습니다.</Container>;

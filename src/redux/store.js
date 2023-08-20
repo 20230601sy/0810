@@ -65,7 +65,6 @@ const cartItems = createSlice({
         item.count++;
       else
         state.push({ id : id, title : title, price : price, count : 1 });
-      // state.sort((a, b) => Number(a.id)-Number(b.id));
       localStorage.setItem('cartItems', JSON.stringify(state));
     },
     deleteItemFromCart(state, action) {
