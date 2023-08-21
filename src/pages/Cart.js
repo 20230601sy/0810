@@ -36,7 +36,7 @@ const Cart = ({width}) => {
                     &nbsp;&nbsp;{item.count}&nbsp;&nbsp;
                     <button className="btn" onClick={()=>dispatch(incCnt(item.id))}>┼</button>
                   </td>
-                  <td> <button className="btn btn-primary" style={{...BG_COLOR, border:'none'}} onClick={()=>dispatch(incCnt(i))}>수량추가</button> </td>
+                  <td> <button className="btn btn-primary" style={{...BG_COLOR, border:'none'}} onClick={()=>dispatch(incCnt(item.id))}>수량추가</button> </td>
                   <td>
                     <button className="btn btn-primary" style={{...BG_COLOR_SECOND, border:'none'}} onClick={()=>{dispatch(deleteItemFromCart(item.id))}}>상품삭제</button> 
                   </td>

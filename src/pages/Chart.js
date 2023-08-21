@@ -14,7 +14,7 @@ const Chart = ({width}) => {
   //   setWidth(ref.current.clientWidth*0.9);
   // }, [ref])
   // const {width} = useSelector(state=>state.windowSize);
-  let cWidth = width/2.5;
+  let cWidth = width/3;
   // alert(width);
   return (
     <Container className='Chart mt-2'>
