@@ -17,9 +17,6 @@ import LoginPage from './pages/LoginPage';
 import Join from './pages/Join';
 import MyPage from './pages/MyPage';
 import Cart from './pages/Cart';
-import Chart from './pages/Chart';
-import Notice from './pages/Notice';
-import Board from './pages/Board';
 
 import './App.css';
 

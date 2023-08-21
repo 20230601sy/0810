@@ -5,9 +5,12 @@ const LATITUDE = 37.5412952;
 const LONGITUDE = 126.8381811;
 // const POSITION_ID = 1576534967;
 const POSITION_URL = 'https://map.kakao.com/link/to/1576534967';
+// import { useResizeDetector } from 'react-resize-detector';
 
 const About = () => {
-  
+
+  // const { width, height, ref } = useResizeDetector();
+
   useEffect(() => {
     const maps =['', ''];
 

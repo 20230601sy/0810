@@ -19,10 +19,10 @@ const Items = () => {
     
   return (
     <div className="Items">
-      <Container className='d-flex justify-content-center'  onScroll={handleScroll}  style={{overflowY: 'scroll', maxHeight: 'calc(100vh - 120px - 80px)'}}>
+      <Container className='d-flex justify-content-center'  onScroll={handleScroll}  style={{overflowY: 'scroll', maxHeight: '80vh'}}>
         <div className="item-list-container">
           {
-            showItems.slice(0, numShowItems.num).map((item)=>item && <div key={item.id}><ItemCard item={item}/></div>)
+            showItems.slice(0, numShowItems).map((item)=>item && <div key={item.id}><ItemCard item={item}/></div>)
           }
         </div>
       </Container>
